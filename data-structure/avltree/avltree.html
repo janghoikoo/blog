@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>Introduction · GitBook</title>
+        <title>AVL Tree · GitBook</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.3">
@@ -57,10 +57,10 @@
     <link rel="shortcut icon" href="../../gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="../stack/stack.html" />
+    <link rel="next" href="../btree/btree.html" />
     
     
-    <link rel="prev" href="../../" />
+    <link rel="prev" href="../binarysearchtree/binarysearchtree.html" />
     
 
     </head>
@@ -109,9 +109,9 @@
         
         
     
-        <li class="chapter active" data-level="2.1" data-path="introduction.html">
+        <li class="chapter " data-level="2.1" data-path="../introduction/introduction.html">
             
-                <a href="introduction.html">
+                <a href="../introduction/introduction.html">
             
                     
                     Introduction
@@ -174,9 +174,9 @@
             
         </li>
     
-        <li class="chapter " data-level="2.6" data-path="../avltree/avltree.html">
+        <li class="chapter active" data-level="2.6" data-path="avltree.html">
             
-                <a href="../avltree/avltree.html">
+                <a href="avltree.html">
             
                     
                     AVL Tree
@@ -256,7 +256,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href="../.." >Introduction</a>
+        <a href="../.." >AVL Tree</a>
     </h1>
 </div>
 
@@ -271,79 +271,17 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h3 id="1-data-structure">1. Data Structure</h3>
+                                <h3 id="avl-tree">AVL Tree</h3>
+<h5 id="adelson-velskii-and-landis-tree">: Adelson-Velskii and Landis Tree</h5>
 <hr>
-<p>&#xC0AC;&#xB78C;&#xB4E4;&#xC774; &#xC0AC;&#xBB3C;&#xB4E4;&#xC744; &#xC815;&#xB9AC;&#xD558;&#xB294; &#xAC83; &#xCC98;&#xB7FC; &#xD504;&#xB85C;&#xADF8;&#xB7A8;&#xC5D0;&#xC11C;&#xB3C4; &#xC790;&#xB8CC;&#xB4E4;&#xC744; &#xC815;&#xB9AC;&#xD558;&#xB294; &#xC5EC;&#xB7EC;&#xAC00;&#xC9C0; &#xAD6C;&#xC870;&#xB4E4;&#xC774; &#xC788;&#xB2E4;. &#xC774;&#xB97C; &#xC790;&#xB8CC;&#xAD6C;&#xC870;&#xB77C; &#xBD80;&#xB978;&#xB2E4;.</p>
-<hr>
-<h3 id="2-algorithm">2. Algorithm</h3>
-<h4 id="finite-set-of-instructions-that-accomplish-a-particular-task">: finite set of instructions that accomplish a particular task</h4>
-<hr>
-<p>&#xCEF4;&#xD4E8;&#xD130;&#xB85C; &#xBB38;&#xC81C;&#xB97C; &#xD480;&#xAE30;&#xC704;&#xD55C; &#xB2E8;&#xACC4;&#xC801;&#xC778; &#xC808;&#xCC28;. &#xCEF4;&#xD4E8;&#xD130;&#xAC00; &#xC8FC;&#xC5B4;&#xC9C4; &#xC0C1;&#xD0DC;&#xC5D0;&#xC11C; &#xBB38;&#xC81C;&#xB97C; &#xD574;&#xACB0;&#xD558;&#xB294; &#xBC29;&#xBC95;&#xC744; &#xC815;&#xBC00;&#xD558;&#xAC8C; &#xCEF4;&#xD4E8;&#xD130; &#xC5B8;&#xC5B4;&#xB85C; &#xAE30;&#xC220;&#xD55C; &#xAC83;. </p>
+<h4 id="1definition">1.Definition</h4>
 <ul>
-<li>algorithms satisfy the following criteria<ul>
-<li>zero or more inputs  </li>
-<li>at least one output  </li>
-<li>definiteness (clear, unambiguous instructions) </li>
-<li>finiteness (terminates after a finite number of steps) </li>
-<li>effectiveness</li>
-</ul>
-</li>
-</ul>
-<h4 id="2-1-recursive-algorithms">2-1. recursive algorithms</h4>
-<h5 id="allow-us-to-express-a-complex-process-in-very-clear-terms">: Allow us to express a complex process in very clear terms</h5>
-<ul>
-<li>Any function that we can write using assignment, if-else, and while statements can be written recursively</li>
-<li>direct recursion : a function call them selves</li>
-<li>indirect recursion : a function call other function that invoke the calling function again</li>
-<li>should establish <strong>boundary condition</strong> that terminate the recursive call</li>
-</ul>
-<h3 id="3-data-abstraction">3. Data abstraction</h3>
-<hr>
-<h3 id="4-performance-evaluation">4. Performance evaluation</h3>
-<h4 id="4-1-machine-dependent-performance-measurement">4-1. machine dependent performance measurement</h4>
-<h4 id="4-2-machine-independent-performance-analysis-complexity-theory">4-2. machine independent performance analysis (complexity theory)</h4>
-<h5 id="space-complexity--the-amount-of-memory-that-it-needs-to-run-to-completion">space complexity : the amount of memory that it needs to run to completion</h5>
-<pre><code>- Total space requirement
-    - fixed space requirement
-        - not depend on the number and size of the program&#x2019;s inputs and outputs
-        - e.g. instruction space, variable space, constant space, structure variable space
-    - variable space requirement
-        - the space needed by structured variable whose size depends on the particular instance of the problem being solved
-        - e.g.stack, dynamic memory allocation
-</code></pre><h5 id="time-complexity--time-taken-by-a-program">time complexity : time taken by a program</h5>
-<pre><code>- Total time taken by a program
-    - compile tile
-    - run time(execution) time : count the number of operations that the program performs 
-</code></pre><h5 id="asymptotic-notation">asymptotic notation</h5>
-<ul>
-<li>big-O notation : used to describe <strong>the worst case</strong> running time for an algorithm.<ul>
-<li>mathematical notation that describes the limiting behavior of a function  when the argument tends towards a particular value or infinity.</li>
-<li>f(n) = O(g(n)) iff there exist positive constants c and n0 such that f(n) &#x2264; c&#xB7;g(n) for all n, n &#x2265; n0 <ul>
-<li>g(n) is an <strong>upper bound</strong> on the value of f(n) for all n, n &#x2265; n0</li>
-<li>g(n) should be as small a function of n as informative</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-<p><img src="image/big-O complexity.png" alt=""></p>
-<ul>
-<li><p>big-&#x2126; notation : used to describe <strong>the best case</strong> running time for an algorithm.</p>
-<ul>
-<li>f(n) = &#x3A9; (g(n)) iff there exist positive constants c and n0 such that f(n) &#x2265; c&#xB7;g(n) for all n, n &#x2265; n0</li>
-<li>g(n) is a <strong>lower bound</strong> on the value of f(n) for all n, n &#x2265; n0</li>
-</ul>
-</li>
-<li><p>big-&#x398; notation</p>
-<ul>
-<li>f(n) = &#x398;(g(n)) iff there exist positive constants c1, c2, and n0 such that c1&#xB7;g(n) &#x2264; f(n) &#x2264; c2&#xB7;g(n) for all n, n &#x2265; n0</li>
-<li>g(n) is <strong>both</strong> an upper and lower bound on f(n)</li>
-</ul>
-</li>
+<li>binary search tree</li>
+<li>for every node in the tree, <strong>the heights of its left subtree and right subtree differ by at most 1</strong>. </li>
 </ul>
 <hr>
-<h2 id="ref">Ref</h2>
-<p><a href="[https:/www.hackerearth.com/practice/notes/big-o-cheatsheet-series-data-structures-and-algorithms-with-thier-complexities-1/](https:/www.hackerearth.com/practice/notes/big-o-cheatsheet-series-data-structures-and-algorithms-with-thier-complexities-1">Data structures and Algorithms with thier complexities</a>)</p>
+<p>Ref</p>
+<p><a href="[https:/github.com/janghoikoo/blog](https:/github.com/janghoikoo/blog">lecture note</a>/data-structure/avltree/avltree.pdf)</p>
 
                                 
                                 </section>
@@ -371,12 +309,12 @@
 
             
                 
-                <a href="../../" class="navigation navigation-prev " aria-label="Previous page: 블로그소개">
+                <a href="../binarysearchtree/binarysearchtree.html" class="navigation navigation-prev " aria-label="Previous page: Binary Search Tree">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
                 
-                <a href="../stack/stack.html" class="navigation navigation-next " aria-label="Next page: Stack">
+                <a href="../btree/btree.html" class="navigation navigation-next " aria-label="Next page: B Tree">
                     <i class="fa fa-angle-right"></i>
                 </a>
                 
@@ -387,7 +325,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Introduction","level":"2.1","depth":1,"next":{"title":"Stack","level":"2.2","depth":1,"path":"data-structure/stack/stack.md","ref":"data-structure/stack/stack.md","articles":[]},"previous":{"title":"블로그소개","level":"1.1","depth":1,"path":"README.md","ref":"README.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"data-structure/introduction/introduction.md","mtime":"2019-09-22T06:13:32.333Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-09-22T09:24:42.127Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"AVL Tree","level":"2.6","depth":1,"next":{"title":"B Tree","level":"2.7","depth":1,"path":"data-structure/btree/btree.md","ref":"data-structure/btree/btree.md","articles":[]},"previous":{"title":"Binary Search Tree","level":"2.5","depth":1,"path":"data-structure/binarysearchtree/binarysearchtree.md","ref":"data-structure/binarysearchtree/binarysearchtree.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"data-structure/avltree/avltree.md","mtime":"2019-09-22T09:21:48.335Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-09-22T09:24:42.127Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>

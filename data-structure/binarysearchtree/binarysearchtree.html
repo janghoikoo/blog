@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>Stack · GitBook</title>
+        <title>Binary Search Tree · GitBook</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.3">
@@ -57,10 +57,10 @@
     <link rel="shortcut icon" href="../../gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="../queue/queue.html" />
+    <link rel="next" href="../avltree/avltree.html" />
     
     
-    <link rel="prev" href="../introduction/introduction.html" />
+    <link rel="prev" href="../tree/tree.html" />
     
 
     </head>
@@ -122,9 +122,9 @@
             
         </li>
     
-        <li class="chapter active" data-level="2.2" data-path="stack.html">
+        <li class="chapter " data-level="2.2" data-path="../stack/stack.html">
             
-                <a href="stack.html">
+                <a href="../stack/stack.html">
             
                     
                     Stack
@@ -161,9 +161,9 @@
             
         </li>
     
-        <li class="chapter " data-level="2.5" data-path="../binarysearchtree/binarysearchtree.html">
+        <li class="chapter active" data-level="2.5" data-path="binarysearchtree.html">
             
-                <a href="../binarysearchtree/binarysearchtree.html">
+                <a href="binarysearchtree.html">
             
                     
                     Binary Search Tree
@@ -256,7 +256,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href="../.." >Stack</a>
+        <a href="../.." >Binary Search Tree</a>
     </h1>
 </div>
 
@@ -271,45 +271,78 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h3 id="stack">Stack</h3>
-<h5 id="a-list-that-insertions-and-deletions-can-be-performed-at-the-end-of-the-list">: a list that insertions and deletions can be performed at the end of the list</h5>
-<h5 id="----lifolast-in-first-out--&#xC989;-&#xC790;&#xB8CC;&#xC758;--&#xCD9C;&#xB825;--&#xC21C;&#xC11C;&#xAC00;--&#xC785;&#xB825;&#xC21C;&#xC11C;&#xC758;--&#xC5ED;&#xC21C;&#xC73C;&#xB85C;--&#xC774;&#xB8E8;&#xC5B4;&#xC838;&#xC57C;--&#xD560;--&#xACBD;&#xC6B0;--&#xB9E4;&#xC6B0;--&#xAE34;&#xC694;&#xD558;&#xAC8C;--&#xC4F0;&#xC778;&#xB2E4;">: -   <strong>LIFO</strong>(Last In First Out).  &#xC989;, &#xC790;&#xB8CC;&#xC758;  &#xCD9C;&#xB825;  &#xC21C;&#xC11C;&#xAC00;  &#xC785;&#xB825;&#xC21C;&#xC11C;&#xC758;  &#xC5ED;&#xC21C;&#xC73C;&#xB85C;  &#xC774;&#xB8E8;&#xC5B4;&#xC838;&#xC57C;  &#xD560;  &#xACBD;&#xC6B0;  &#xB9E4;&#xC6B0;  &#xAE34;&#xC694;&#xD558;&#xAC8C;  &#xC4F0;&#xC778;&#xB2E4;.</h5>
+                                <h3 id="binary-search-tree">Binary Search Tree</h3>
 <hr>
-<h4 id="1operations">1.Operations</h4>
+<h4 id="1-binary-search">1. Binary Search</h4>
+<h5 id="-&#xD0D0;&#xC0C9;&#xC758;-&#xB9E4;-&#xB2E8;&#xACC4;&#xB9C8;&#xB2E4;-&#xAC80;&#xC0C9;&#xD574;&#xC57C;-&#xD560;-&#xB9AC;&#xC2A4;&#xD2B8;&#xC758;-&#xD06C;&#xAE30;&#xAC00;-&#xC808;&#xBC18;&#xC73C;&#xB85C;-&#xC904;&#xC5B4;&#xB4DC;&#xB294;-&#xD0D0;&#xC0C9;-&#xBC29;&#xBC95;-&#xBC18;&#xB4DC;&#xC2DC;--&#xB370;&#xC774;&#xD130;&#xC758;--&#xBC30;&#xC5F4;&#xC774;--&#xC815;&#xB82C;--&#xB418;&#xC5B4;&#xC788;&#xC5B4;&#xC57C;--&#xD55C;&#xB2E4;-&#xB530;&#xB77C;&#xC11C;--&#xB370;&#xC774;&#xD130;&#xC758;--&#xC0BD;&#xC785;&#xC774;&#xB098;--&#xC0AD;&#xC81C;&#xAC00;--&#xBE48;&#xBC88;&#xD560;--&#xACBD;&#xC6B0;--&#xC801;&#xD569;&#xD558;&#xC9C0;--&#xC54A;&#xACE0;--&#xACE0;&#xC815;&#xB41C;--&#xB370;&#xC774;&#xD130;&#xC5D0;--&#xB300;&#xD55C;--&#xD0D0;&#xC0C9;&#xC5D0;--&#xC801;&#xD569;&#xD558;&#xB2E4;">:  &#xD0D0;&#xC0C9;&#xC758; &#xB9E4; &#xB2E8;&#xACC4;&#xB9C8;&#xB2E4; &#xAC80;&#xC0C9;&#xD574;&#xC57C; &#xD560; &#xB9AC;&#xC2A4;&#xD2B8;&#xC758; &#xD06C;&#xAE30;&#xAC00; &#xC808;&#xBC18;&#xC73C;&#xB85C; &#xC904;&#xC5B4;&#xB4DC;&#xB294; &#xD0D0;&#xC0C9; &#xBC29;&#xBC95;. &#xBC18;&#xB4DC;&#xC2DC;  &#xB370;&#xC774;&#xD130;&#xC758;  &#xBC30;&#xC5F4;&#xC774;  &#xC815;&#xB82C;  &#xB418;&#xC5B4;&#xC788;&#xC5B4;&#xC57C;  &#xD55C;&#xB2E4;. &#xB530;&#xB77C;&#xC11C;  &#xB370;&#xC774;&#xD130;&#xC758;  &#xC0BD;&#xC785;&#xC774;&#xB098;  &#xC0AD;&#xC81C;&#xAC00;  &#xBE48;&#xBC88;&#xD560;  &#xACBD;&#xC6B0;  &#xC801;&#xD569;&#xD558;&#xC9C0;  &#xC54A;&#xACE0;  &#xACE0;&#xC815;&#xB41C;  &#xB370;&#xC774;&#xD130;&#xC5D0;  &#xB300;&#xD55C;  &#xD0D0;&#xC0C9;&#xC5D0;  &#xC801;&#xD569;&#xD558;&#xB2E4;.</h5>
+<h5 id="1-1-sequential-search-vs-binary-search">1-1 sequential search vs binary search</h5>
 <ul>
-<li>push(X,S) : insert element X in the list S</li>
-<li>pop(S): deletes the most recently inserted element from S</li>
-</ul>
-<p><img src="images/stack_operation.png" alt=""></p>
-<h4 id="2-implementations">2. Implementations</h4>
-<ul>
-<li>by Array<ul>
-<li>&#xAD6C;&#xD604;&#xC774; &#xAC04;&#xB2E8;&#xD55C; &#xBC18;&#xBA74;, &#xC2A4;&#xD0DD;&#xC758; &#xD06C;&#xAE30;&#xAC00; &#xACE0;&#xC815;&#xB418;&#xB294; &#xB2E8;&#xC810;&#xC774; &#xC788;&#xB2E4;.</li>
+<li>sequential search <ul>
+<li>simply store the keys in a linear array and search element sequentially</li>
+<li>insertion : O(1)</li>
+<li>searching : O(N) </li>
 </ul>
 </li>
-<li>by Linked-list<ul>
-<li>&#xAD6C;&#xD604;&#xC774; &#xBCF5;&#xC7A1;&#xD55C; &#xBC18;&#xBA74;, &#xC2A4;&#xD0DD;&#xC758; &#xD06C;&#xAE30;&#xAC00; &#xAC00;&#xBCC0;&#xC801;&#xC774; &#xC7A5;&#xC810;&#xC774; &#xC788;&#xB2E4;.</li>
-</ul>
-</li>
-</ul>
-<h4 id="3-use-cases">3. Use cases</h4>
-<ul>
-<li>formula calculation <ul>
-<li>postfix evaluation<ol>
-<li>scan left to right</li>
-<li>place the operands on a stack until an operator is found </li>
-<li>perform operations </li>
-</ol>
-</li>
+<li>binary search<ul>
+<li>insertion/deletion : O(N)</li>
+<li>searching : O(logN)</li>
 </ul>
 </li>
 </ul>
-<p><img src="images/postfix_evaluation.png" alt="postfix evaluation"></p>
+<h5 id="1-2-implementation">1-2. implementation</h5>
 <ul>
-<li>parenthesis matching problem</li>
+<li><p>binary search using recursive</p>
+<pre><code>int recursiveBinarySearch(int[] sortedArray, int start, int end, int key) {
+
+  if (start &lt; end) {
+      int mid = start + (end - start) / 2;
+      if (key &lt; sortedArray[mid]) {
+          return recursiveBinarySearch(sortedArray, start, mid, key);
+      } else if (key &gt; sortedArray[mid]) {
+          recursiveBinarySearch(sortedArray, mid + 1, end, key);
+      } else {
+          return mid;
+      }
+  } 
+  return -(start + 1);
+}
+</code></pre></li>
+<li><p>binary search using divide and conquer</p>
+<pre><code>int binarySearch(int[] inputArr, int key) {
+  int start = 0;
+  int end = inputArr.length - 1;
+
+  while (start &lt; end) {
+      int mid = (start + end) / 2;
+      if (key &lt; inputArr[mid]) {
+          end = mid - 1;
+      } else if (key &gt; inputArr[mid]) {
+          start = mid + 1;
+      } else {
+          return mid;
+      }
+  } 
+  return -1;
+}
+</code></pre></li>
 </ul>
-<p><img src="images/parenthesis_matching_problem1.png" alt=""></p>
-<p><img src="images/parenthesis_matching_problem2.png" alt=""></p>
+<h4 id="2-binary-search-tree">2. Binary Search Tree</h4>
+<ul>
+<li>Binary-search&#xC640;  &#xADFC;&#xBCF8;&#xC801;&#xC73C;&#xB85C;  &#xAC19;&#xC740;  &#xC6D0;&#xB9AC;. &#xC774;&#xC9C4;&#xD0D0;&#xC0C9;  &#xD2B8;&#xB9AC;&#xB294;  &#xBE44;&#xAD50;&#xC801;  &#xBE60;&#xB978;  &#xC2DC;&#xAC04;&#xC548;&#xC5D0;  &#xB370;&#xC774;&#xD130;&#xC758;  &#xC0BD;&#xC785;&#xACFC;  &#xC0AD;&#xC81C;&#xB97C;  &#xB05D;&#xB9C8;&#xCE60;  &#xC218;  &#xC788;&#xB294;  &#xAD6C;&#xC870;&#xB85C;  &#xB418;&#xC5B4;&#xC788;&#xB2E4;.</li>
+<li>&#xC774;&#xC9C4;&#xD0D0;&#xC0C9;  &#xD2B8;&#xB9AC;&#xAC00;  &#xADE0;&#xD615;  &#xD2B8;&#xB9AC;&#xB77C;&#xBA74; , &#xD0D0;&#xC0C9;&#xC758;  &#xC2DC;&#xAC04;&#xBCF5;&#xC7A1;&#xB3C4;&#xB294;  &#xB2F9;&#xC5F0;&#xD788; O(logn)&#xC774;&#xB2E4;. &#xD558;&#xC9C0;&#xB9CC;  &#xADE0;&#xD615;&#xC774;  &#xAE68;&#xC9C4;&#xB2E4;&#xBA74;(&#xD55C;&#xCABD;&#xC73C;&#xB85C;  &#xCE58;&#xC6B0;&#xCE58;&#xB294;  &#xACBD;&#xC6B0;  &#xB4F1;) O(n)&#xC774;  &#xB41C;&#xB2E4;.</li>
+<li>&#xB530;&#xB77C;&#xC11C;  &#xC774;&#xC9C4;&#xD0D0;&#xC0C9;  &#xD2B8;&#xB9AC;&#xC5D0;&#xC11C;&#xB294;  <strong>&#xD2B8;&#xB9AC;&#xC758; &#xADE0;&#xD615;&#xC744; &#xC720;&#xC9C0;&#xD558;&#xB294;&#xAC83;&#xC774; &#xAC00;&#xC7A5; &#xC911;&#xC694;&#xD558;&#xB2E4;</strong>.</li>
+</ul>
+<h5 id="2-1-binary-search-tree">2-1. binary search tree</h5>
+<p>one of the most fundamental problems in data structure design</p>
+<ul>
+<li>there are a set of records R1, R2,..., Rn which are associated with distinct key values X1, X2,..., Xn, respectively.</li>
+<li>given a search key x, find the record if it occurs in the set</li>
+</ul>
+<p>for every node X in the tree,</p>
+<ul>
+<li>the values of all the keys in its left subtree are smaller than the key value in X</li>
+<li>the values of all the keys in its right subtree are larger than the key value in X</li>
+</ul>
 
                                 
                                 </section>
@@ -337,12 +370,12 @@
 
             
                 
-                <a href="../introduction/introduction.html" class="navigation navigation-prev " aria-label="Previous page: Introduction">
+                <a href="../tree/tree.html" class="navigation navigation-prev " aria-label="Previous page: Tree">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
                 
-                <a href="../queue/queue.html" class="navigation navigation-next " aria-label="Next page: Queue">
+                <a href="../avltree/avltree.html" class="navigation navigation-next " aria-label="Next page: AVL Tree">
                     <i class="fa fa-angle-right"></i>
                 </a>
                 
@@ -353,7 +386,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Stack","level":"2.2","depth":1,"next":{"title":"Queue","level":"2.3","depth":1,"path":"data-structure/queue/queue.md","ref":"data-structure/queue/queue.md","articles":[]},"previous":{"title":"Introduction","level":"2.1","depth":1,"path":"data-structure/introduction/introduction.md","ref":"data-structure/introduction/introduction.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"data-structure/stack/stack.md","mtime":"2019-09-22T06:13:32.344Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-09-22T09:24:42.127Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Binary Search Tree","level":"2.5","depth":1,"next":{"title":"AVL Tree","level":"2.6","depth":1,"path":"data-structure/avltree/avltree.md","ref":"data-structure/avltree/avltree.md","articles":[]},"previous":{"title":"Tree","level":"2.4","depth":1,"path":"data-structure/tree/tree.md","ref":"data-structure/tree/tree.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"data-structure/binarysearchtree/binarysearchtree.md","mtime":"2019-09-22T09:21:48.339Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-09-22T09:24:42.127Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>

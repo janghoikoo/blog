@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>Stack · GitBook</title>
+        <title>Hasing · GitBook</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.3">
@@ -57,10 +57,8 @@
     <link rel="shortcut icon" href="../../gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="../queue/queue.html" />
     
-    
-    <link rel="prev" href="../introduction/introduction.html" />
+    <link rel="prev" href="../heap/heap.html" />
     
 
     </head>
@@ -122,9 +120,9 @@
             
         </li>
     
-        <li class="chapter active" data-level="2.2" data-path="stack.html">
+        <li class="chapter " data-level="2.2" data-path="../stack/stack.html">
             
-                <a href="stack.html">
+                <a href="../stack/stack.html">
             
                     
                     Stack
@@ -213,9 +211,9 @@
             
         </li>
     
-        <li class="chapter " data-level="2.9" data-path="../hasing/hasing.html">
+        <li class="chapter active" data-level="2.9" data-path="hasing.html">
             
-                <a href="../hasing/hasing.html">
+                <a href="hasing.html">
             
                     
                     Hasing
@@ -256,7 +254,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href="../.." >Stack</a>
+        <a href="../.." >Hasing</a>
     </h1>
 </div>
 
@@ -271,45 +269,53 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h3 id="stack">Stack</h3>
-<h5 id="a-list-that-insertions-and-deletions-can-be-performed-at-the-end-of-the-list">: a list that insertions and deletions can be performed at the end of the list</h5>
-<h5 id="----lifolast-in-first-out--&#xC989;-&#xC790;&#xB8CC;&#xC758;--&#xCD9C;&#xB825;--&#xC21C;&#xC11C;&#xAC00;--&#xC785;&#xB825;&#xC21C;&#xC11C;&#xC758;--&#xC5ED;&#xC21C;&#xC73C;&#xB85C;--&#xC774;&#xB8E8;&#xC5B4;&#xC838;&#xC57C;--&#xD560;--&#xACBD;&#xC6B0;--&#xB9E4;&#xC6B0;--&#xAE34;&#xC694;&#xD558;&#xAC8C;--&#xC4F0;&#xC778;&#xB2E4;">: -   <strong>LIFO</strong>(Last In First Out).  &#xC989;, &#xC790;&#xB8CC;&#xC758;  &#xCD9C;&#xB825;  &#xC21C;&#xC11C;&#xAC00;  &#xC785;&#xB825;&#xC21C;&#xC11C;&#xC758;  &#xC5ED;&#xC21C;&#xC73C;&#xB85C;  &#xC774;&#xB8E8;&#xC5B4;&#xC838;&#xC57C;  &#xD560;  &#xACBD;&#xC6B0;  &#xB9E4;&#xC6B0;  &#xAE34;&#xC694;&#xD558;&#xAC8C;  &#xC4F0;&#xC778;&#xB2E4;.</h5>
+                                <h3 id="hasing">Hasing</h3>
+<h5 id="technique-used-for-performing-insertion-deletion-and-finding-in-constant-time">: technique used for performing insertion, deletion, and finding in constant time</h5>
 <hr>
-<h4 id="1operations">1.Operations</h4>
+<h4 id="1-adt">1. ADT</h4>
 <ul>
-<li>push(X,S) : insert element X in the list S</li>
-<li>pop(S): deletes the most recently inserted element from S</li>
-</ul>
-<p><img src="images/stack_operation.png" alt=""></p>
-<h4 id="2-implementations">2. Implementations</h4>
+<li><p>Collection of pairs</p>
 <ul>
-<li>by Array<ul>
-<li>&#xAD6C;&#xD604;&#xC774; &#xAC04;&#xB2E8;&#xD55C; &#xBC18;&#xBA74;, &#xC2A4;&#xD0DD;&#xC758; &#xD06C;&#xAE30;&#xAC00; &#xACE0;&#xC815;&#xB418;&#xB294; &#xB2E8;&#xC810;&#xC774; &#xC788;&#xB2E4;.</li>
+<li>pair : (key, element)</li>
+<li>each pair have unique key</li>
 </ul>
 </li>
-<li>by Linked-list<ul>
-<li>&#xAD6C;&#xD604;&#xC774; &#xBCF5;&#xC7A1;&#xD55C; &#xBC18;&#xBA74;, &#xC2A4;&#xD0DD;&#xC758; &#xD06C;&#xAE30;&#xAC00; &#xAC00;&#xBCC0;&#xC801;&#xC774; &#xC7A5;&#xC810;&#xC774; &#xC788;&#xB2E4;.</li>
-</ul>
-</li>
-</ul>
-<h4 id="3-use-cases">3. Use cases</h4>
+<li><p>Operations</p>
 <ul>
-<li>formula calculation <ul>
-<li>postfix evaluation<ol>
-<li>scan left to right</li>
-<li>place the operands on a stack until an operator is found </li>
-<li>perform operations </li>
-</ol>
-</li>
+<li>search(key)</li>
+<li>delete(key)</li>
+<li>insert(key, element)</li>
 </ul>
 </li>
 </ul>
-<p><img src="images/postfix_evaluation.png" alt="postfix evaluation"></p>
+<h4 id="2-static-hasing">2. Static hasing</h4>
 <ul>
-<li>parenthesis matching problem</li>
+<li>hash table is an array of fixed size, containing the keys </li>
+<li>hash function maps each key to some cell in the hash table</li>
 </ul>
-<p><img src="images/parenthesis_matching_problem1.png" alt=""></p>
-<p><img src="images/parenthesis_matching_problem2.png" alt=""></p>
+<p><img src="images/static hasing.png" alt="static hasing"></p>
+<h4 id="3-resolving-collision">3. Resolving Collision</h4>
+<h5 id="collision--occurs-when-different-keys-are-mapped-to-the-same-cell">collision : occurs when different keys are mapped to the same cell</h5>
+<h5 id="1-separate-chaining-open-hasing">1. separate chaining (open hasing)</h5>
+<ul>
+<li>keep a list of all elements that hash to the same value</li>
+<li>needs extra space and operation for pointers and new nodes</li>
+</ul>
+<p><img src="images/open hashing.png" alt="open hasing"></p>
+<h5 id="2-open-addressing-closed-hasing">2. open addressing (closed hasing)</h5>
+<ul>
+<li>if a collision occurs, alternative cells are tried until an empty cell is found</li>
+</ul>
+<p><img src="images/linear probing.png" alt="linear probing"></p>
+<h4 id="4-dynamic-hasing">4. Dynamic hasing</h4>
+<h5 id="the-hash-table-is-broken-into-a-number-of-smaller-hash-tables-each-is-called-a-bucket">: The hash table is broken into a number of smaller hash tables, each is called a bucket.</h5>
+<pre><code>locality is important for large data structure 
+since disk access is costly but memory access is cheap
+</code></pre><ul>
+<li>To find which bucket to search for, we store a data structure called directory in main memory, and each entry in the directory holds a disk address of the corresponding bucket.</li>
+<li>Each bucket can hold as many records that can be fit in one page, and we will try to keep each bucket at least half full.</li>
+</ul>
+<p><img src="images/dynamic hasing.png" alt="dynamic hasing"></p>
 
                                 
                                 </section>
@@ -337,14 +343,10 @@
 
             
                 
-                <a href="../introduction/introduction.html" class="navigation navigation-prev " aria-label="Previous page: Introduction">
+                <a href="../heap/heap.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page: Heap">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
-                
-                <a href="../queue/queue.html" class="navigation navigation-next " aria-label="Next page: Queue">
-                    <i class="fa fa-angle-right"></i>
-                </a>
                 
             
         
@@ -353,7 +355,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Stack","level":"2.2","depth":1,"next":{"title":"Queue","level":"2.3","depth":1,"path":"data-structure/queue/queue.md","ref":"data-structure/queue/queue.md","articles":[]},"previous":{"title":"Introduction","level":"2.1","depth":1,"path":"data-structure/introduction/introduction.md","ref":"data-structure/introduction/introduction.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"data-structure/stack/stack.md","mtime":"2019-09-22T06:13:32.344Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-09-22T09:24:42.127Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Hasing","level":"2.9","depth":1,"previous":{"title":"Heap","level":"2.8","depth":1,"path":"data-structure/heap/heap.md","ref":"data-structure/heap/heap.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"data-structure/hasing/hasing.md","mtime":"2019-09-22T09:21:48.344Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-09-22T09:24:42.127Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>
