@@ -12,7 +12,7 @@
 ----
 Ref
 
-[lecture note]([https://github.com/janghoikoo/blog](https://github.com/janghoikoo/blog)/data-structure/avltree/avltree.pdf)
+[AVL Tree.pdf](https://github.com/janghoikoo/blog//data-structure/avltree/avltree.pdf)
 
 
 
