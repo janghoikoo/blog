@@ -1,0 +1,297 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>Tree · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    
+    <link rel="prev" href="../../date-structure/queue/queue.md" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../../">
+            
+                <a href="../../">
+            
+                    
+                    블로그소개
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">자료구조</li>
+        
+        
+    
+        <li class="chapter " data-level="2.1" data-path="../introduction/introduction.html">
+            
+                <a href="../introduction/introduction.html">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2" data-path="../stack/stack.html">
+            
+                <a href="../stack/stack.html">
+            
+                    
+                    Stack
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3" data-path="../../date-structure/queue/queue.md">
+            
+                <span>
+            
+                    
+                    Queue
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="2.4" data-path="tree.html">
+            
+                <a href="tree.html">
+            
+                    
+                    Tree
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="../.." >Tree</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h3 id="tree">Tree</h3>
+<h5 id="-&#xB9CC;&#xC57D;--&#xC790;&#xB8CC;&#xB4E4;&#xC774;--&#xACC4;&#xCE35;&#xC801;&#xC778;--&#xAD6C;&#xC870;hierarchical-structure&#xB97C;--&#xAC00;&#xC9C0;&#xACE0;&#xC788;&#xB2E4;&#xBA74;-&#xC120;&#xD615;--&#xC790;&#xB8CC;&#xAD6C;&#xC870;&#xB294;--&#xC801;&#xC808;&#xD558;&#xC9C0;--&#xBABB;&#xD558;&#xB2E4;-&#xD2B8;&#xB9AC;&#xB294;-&#xC774;&#xB7EC;&#xD55C;--&#xACC4;&#xCE35;&#xC801;&#xC778;-&#xC790;&#xB8CC;&#xB97C;-&#xD45C;&#xD604;&#xD558;&#xB294;&#xB370;-&#xC774;&#xC6A9;&#xB418;&#xB294;-&#xC790;&#xB8CC;&#xAD6C;&#xC870;-&#xC774;&#xB2E4;-&#xC774;&#xB7F0;--&#xACC4;&#xCE35;&#xC801;&#xC778;--&#xAD6C;&#xC870;&#xB97C;--&#xD2B8;&#xB9AC;&#xB77C;&#xACE0;--&#xBD80;&#xB974;&#xB294;--&#xC774;&#xC720;&#xB294;--&#xC774;&#xB7EC;&#xD55C;--&#xAD6C;&#xC870;&#xB4E4;&#xC774;--&#xC2E4;&#xC81C;--&#xD2B8;&#xB9AC;&#xB97C;--&#xAC70;&#xAFB8;&#xB85C;--&#xC5CE;&#xC5B4;&#xB193;&#xC740;--&#xB4EF;--&#xD55C;--&#xBAA8;&#xC591;&#xC744;--&#xD558;&#xACE0;&#xC788;&#xAE30;--&#xB54C;&#xBB38;&#xC774;&#xB2E4;">:  &#xB9CC;&#xC57D;  &#xC790;&#xB8CC;&#xB4E4;&#xC774;  &#xACC4;&#xCE35;&#xC801;&#xC778;  &#xAD6C;&#xC870;(hierarchical structure)&#xB97C;  &#xAC00;&#xC9C0;&#xACE0;&#xC788;&#xB2E4;&#xBA74;, &#xC120;&#xD615;  &#xC790;&#xB8CC;&#xAD6C;&#xC870;&#xB294;  &#xC801;&#xC808;&#xD558;&#xC9C0;  &#xBABB;&#xD558;&#xB2E4;. &#xD2B8;&#xB9AC;&#xB294; &#xC774;&#xB7EC;&#xD55C;  <strong>&#xACC4;&#xCE35;&#xC801;&#xC778; &#xC790;&#xB8CC;&#xB97C; &#xD45C;&#xD604;&#xD558;&#xB294;&#xB370; &#xC774;&#xC6A9;&#xB418;&#xB294; &#xC790;&#xB8CC;&#xAD6C;&#xC870;</strong> &#xC774;&#xB2E4;. &#xC774;&#xB7F0;  &#xACC4;&#xCE35;&#xC801;&#xC778;  &#xAD6C;&#xC870;&#xB97C;  &#xD2B8;&#xB9AC;&#xB77C;&#xACE0;  &#xBD80;&#xB974;&#xB294;  &#xC774;&#xC720;&#xB294;  &#xC774;&#xB7EC;&#xD55C;  &#xAD6C;&#xC870;&#xB4E4;&#xC774;  &#xC2E4;&#xC81C;  &#xD2B8;&#xB9AC;&#xB97C;  &#xAC70;&#xAFB8;&#xB85C;  &#xC5CE;&#xC5B4;&#xB193;&#xC740;  &#xB4EF;  &#xD55C;  &#xBAA8;&#xC591;&#xC744;  &#xD558;&#xACE0;&#xC788;&#xAE30;  &#xB54C;&#xBB38;&#xC774;&#xB2E4;.</h5>
+<hr>
+<h4 id="1-definition">1. Definition</h4>
+<ul>
+<li>recursive definition : a distinguished node called root and zero or more sub trees(T1,T2,.....Tk). each of whose roots are connected with r by an edge.</li>
+</ul>
+<p><img src="images/tree_recursive_definition.png" alt=""></p>
+<h4 id="2-terminology">2. Terminology</h4>
+<pre><code>- root : the top-most node
+- depth(level) of node : length of the (unique) path from the root to that node.
+- sibling : roots of the subtrees have same parent
+- degree of node : the number of children it has
+- terminal(leaf) node : node of degree 0.
+</code></pre><p><img src="images/tree_terminology.png" alt=""></p>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="../../date-structure/queue/queue.md" class="navigation navigation-prev navigation-unique" aria-label="Previous page: Queue">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"Tree","level":"2.4","depth":1,"previous":{"title":"Queue","level":"2.3","depth":1,"path":"date-structure/queue/queue.md","ref":"date-structure/queue/queue.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"data-structure/tree/tree.md","mtime":"2019-09-22T06:05:28.963Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-09-22T06:13:23.430Z"},"basePath":"../..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../../gitbook/gitbook.js"></script>
+    <script src="../../gitbook/theme.js"></script>
+    
+        
+        <script src="../../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+
