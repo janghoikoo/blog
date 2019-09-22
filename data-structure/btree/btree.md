@@ -45,7 +45,8 @@ tree)
 ----
 Ref
 
-[B Tree.pdf](https://github.com/janghoikoo/blog//data-structure/btree/btree.pdf)
+[B Tree.pdf](https://github.com/janghoikoo/blog/blob/master/data-structure/btree/btree.pdf)
+
 
 
 
