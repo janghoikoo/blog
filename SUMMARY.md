@@ -6,7 +6,7 @@
 
 * [Introduction](data-structure/introduction/introduction.md)
 * [Stack](data-structure/stack/stack.md)
-* [Queue](date-structure/queue/queue.md)
+* [Queue](data-structure/queue/queue.md)
 * [Tree](data-structure/tree/tree.md)
 
 ----
