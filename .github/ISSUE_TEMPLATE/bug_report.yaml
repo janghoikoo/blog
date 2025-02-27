@@ -11,10 +11,32 @@ body:
       required: true
 
   - type: textarea
+    id: reproduction_steps
+    attributes:
+      label: "🔄 버그 재현 방법 (시나리오, 환경)"
+      description: "버그를 재현하기 위한 단계를 작성해주세요."
+    validations:
+      required: true
+
+  - type: textarea
     id: bug_details
     attributes:
-      label: "🐛 버그 문제 상황"
-      description: "버그의 상세한 문제 상황을 작성해주세요."
+      label: "🐛 문제 상황"
+      description: "버그가 발생한 상황을 설명해주세요."
+
+  - type: textarea
+    id: expected_result
+    attributes:
+      label: "✅ 기대 결과 (Expected result)"
+      description: "기대했던 동작을 설명해주세요."
+    validations:
+      required: true
+
+  - type: textarea
+    id: actual_result
+    attributes:
+      label: "❌ 실제 결과 (Actual result)"
+      description: "실제로 발생한 동작을 설명해주세요."
     validations:
       required: true
 
@@ -23,12 +45,6 @@ body:
     attributes:
       label: "🔍 버그 원인"
       description: "버그의 원인을 설명해주세요. (reference commit 포함)"
-
-  - type: textarea
-    id: reproduction_steps
-    attributes:
-      label: "🔄 버그 재현 방법"
-      description: "버그를 재현하기 위한 단계를 작성해주세요."
 
   - type: textarea
     id: resolution
