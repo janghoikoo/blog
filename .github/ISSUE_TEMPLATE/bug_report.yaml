@@ -81,3 +81,4 @@ body:
     attributes:
       label: "📷 스크린샷 / GIF 첨부"
       description: "필요한 경우 스크린샷이나 GIF를 첨부해주세요. (UI 변경 시 필수)"
+      value: "<details>\n<summary>스크린샷</summary>\n\n</details>"
