@@ -2,31 +2,47 @@ name: "Feature"
 description: "새로운 기능 개발을 위한 이슈 템플릿"
 labels: ["feature"]
 body:
+  - type: markdown
+    attributes:
+      value: "#### 📌 유입 경로 (Wrike Ticket Link)"
+
   - type: input
     id: wrike_ticket_link
     attributes:
-      label: "📌 유입 경로 (Wrike Ticket Link)"
+      label: ""
       description: "예시: WK-1111111"
     validations:
       required: true
 
+  - type: markdown
+    attributes:
+      value: "#### 🚀 기능명"
+
   - type: input
     id: feature_name
     attributes:
-      label: "🚀 기능명"
+      label: ""
     validations:
       required: true
+
+  - type: markdown
+    attributes:
+      value: "#### 💡 개발 배경"
 
   - type: textarea
     id: background
     attributes:
-      label: "💡 개발 배경"
+      label: ""
       description: "개발 목적을 명확히 이해할 수 있도록 작성해주세요. 제품 관점의 개발 배경은 PM이 Wrike에 작성하고, GitHub 이슈에는 개발자가 개발 관점에서 재작성합니다."
+
+  - type: markdown
+    attributes:
+      value: "#### 📋 기능 상세"
 
   - type: textarea
     id: product_details
     attributes:
-      label: "📋 기능 상세"
+      label: ""
       description: "기능에 대한 상세 설명을 작성해주세요.\n⚠ 크리티컬 코어 로직 변경이 있는 경우 여기에 상세히 기재해주세요."
     validations:
       required: true
@@ -35,33 +51,53 @@ body:
     attributes:
       value: "---"
 
+  - type: markdown
+    attributes:
+      value: "#### 🤔 개발 중 고민했던 사항들"
+
   - type: textarea
     id: considerations
     attributes:
-      label: "🤔 개발 중 고민했던 사항들"
+      label: ""
       description: "개발하면서 고민했던 부분이나 코드리뷰에서 논의하고 싶은 내용을 작성해주세요."
+
+  - type: markdown
+    attributes:
+      value: "#### 📌 배포 후속 TODO"
 
   - type: textarea
     id: post_todo
     attributes:
-      label: "📌 배포 후속 TODO"
+      label: ""
       description: "배포 후 추가 개선되면 좋을 사항을 정리해주세요."
+
+  - type: markdown
+    attributes:
+      value: "#### 🛠 Test Guide"
 
   - type: textarea
     id: test_guide
     attributes:
-      label: "🛠 Test Guide"
+      label: ""
       description: "제품 셋업 방법 및 테스트 방법을 설명해주세요."
+
+  - type: markdown
+    attributes:
+      value: "#### ✅ Test Cases"
 
   - type: textarea
     id: test_cases
     attributes:
-      label: "✅ Test Cases"
+      label: ""
       description: "테스트 케이스를 작성해주세요. Edge case도 포함하면 좋습니다."
+
+  - type: markdown
+    attributes:
+      value: "#### 📷 스크린샷 / GIF 첨부"
 
   - type: textarea
     id: attachments
     attributes:
-      label: "📷 스크린샷 / GIF 첨부"
+      label: ""
       description: "필요한 경우 스크린샷이나 GIF를 첨부해주세요. (UI 변경 시 필수)"
       value: "<details>\n<summary>스크린샷</summary>\n\n</details>"

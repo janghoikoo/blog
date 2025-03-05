@@ -52,6 +52,10 @@ body:
       label: "🛠 해결 방법"
       description: "버그를 해결하기 위한 방법을 작성해주세요."
 
+  - type: markdown
+      attributes:
+        value: "---"
+
   - type: textarea
     id: considerations
     attributes:
