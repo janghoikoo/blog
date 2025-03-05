@@ -26,10 +26,14 @@ body:
   - type: textarea
     id: product_details
     attributes:
-      label: "📋 Product Details"
+      label: "📋 기능 상세"
       description: "기능에 대한 상세 설명을 작성해주세요.\n⚠ 크리티컬 코어 로직 변경이 있는 경우 여기에 상세히 기재해주세요."
     validations:
       required: true
+
+  - type: markdown
+    attributes:
+      value: "---"
 
   - type: textarea
     id: considerations
